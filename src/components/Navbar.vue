@@ -7,17 +7,15 @@
       data-toggle="collapse"
       data-target="#navbar"
     >
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"/>
     </button>
     <div class="navbar-collapse collapse justify-content-stretch" id="navbar">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#"
-            >Portfolio<span class="sr-only">Home</span></a
-          >
+        <li class="nav-item">
+          <router-link class="nav-link" to="/portfolio">Portfolio</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Stocks</a>
+          <router-link class="nav-link" to="/stocks">Stocks</router-link>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
@@ -41,4 +39,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.navbar {
+  margin: 2.5% 0;
+}
+</style>
