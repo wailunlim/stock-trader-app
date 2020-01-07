@@ -11,15 +11,13 @@
       You may Save & Load your Data<br />
       Click on 'End Day' to begin a new Day!
     </p>
-    <hr>
-    <br>
+    <hr />
+    <br />
     <p><strong>Your Funds: $10,000</strong></p>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
 export default {
   name: "home",
   components: {}

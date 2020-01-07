@@ -7,7 +7,7 @@
       data-toggle="collapse"
       data-target="#navbar"
     >
-      <span class="navbar-toggler-icon"/>
+      <span class="navbar-toggler-icon" />
     </button>
     <div class="navbar-collapse collapse justify-content-stretch" id="navbar">
       <ul class="navbar-nav">
