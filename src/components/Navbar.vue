@@ -26,7 +26,7 @@
           <a class="nav-link" href="#">Save & Load</a>
         </li>
         <li class="nav-item">
-          <p class="nav-link disabled">Funds: $10,000</p>
+          <p class="nav-link disabled">Funds: {{ funds }}</p>
         </li>
       </ul>
     </div>
@@ -38,6 +38,11 @@ import { mapActions } from "vuex";
 
 export default {
   name: "Navbar.vue",
+  computed: {
+    funds() {
+      return this.$store.state.user.funds;
+    }
+  },
   methods: {
     ...mapActions(["endDay"])
   }
