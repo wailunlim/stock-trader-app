@@ -7,11 +7,18 @@
     <div class="card-body">
       <form class="form-inline">
         <div class="form-group mx-sm-3 mb-2">
-          <input type="text" class="form-control" placeholder="Quantity" />
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Quantity"
+            v-model.number="quantity"
+            @input="quantity <= 0 ? (quantity = null) : quantity"
+          />
         </div>
         <button
           class="btn btn-primary mb-2"
-          @click.prevent="buyStock({ info: stock, quantity: 1 })"
+          @click.prevent="buyStock({ info: stock, quantity })"
+          :disabled="!quantity"
         >
           Buy
         </button>
@@ -28,6 +35,11 @@ export default {
   props: ["stock"],
   methods: {
     ...mapActions(["buyStock"])
+  },
+  data() {
+    return {
+      quantity: null
+    };
   }
 };
 </script>

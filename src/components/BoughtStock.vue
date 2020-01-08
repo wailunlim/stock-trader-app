@@ -3,7 +3,8 @@
     <div class="card-body">
       <h5 class="card-title mb-1">{{ stock.info.name }}</h5>
       <h6 class="card-subtitle text-muted">
-        (Bought Price: {{ stock.info.price }})
+        Price right now: {{ stock.info.price }}<br />
+        Quantity holding onto: {{ stock.quantity }}
       </h6>
     </div>
     <div class="card-body">
@@ -11,7 +12,7 @@
         <div class="form-group mx-sm-3 mb-2">
           <input type="text" class="form-control" placeholder="Quantity" />
         </div>
-        <button class="btn btn-primary mb-2">Buy</button>
+        <button class="btn btn-warning mb-2">Sell</button>
       </form>
     </div>
   </div>
