@@ -20,7 +20,7 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">End Day</a>
+          <a class="nav-link" href="" @click.prevent="endDay">End Day</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Save & Load</a>
@@ -34,8 +34,13 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
-  name: "Navbar.vue"
+  name: "Navbar.vue",
+  methods: {
+    ...mapActions(["endDay"])
+  }
 };
 </script>
 
