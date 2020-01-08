@@ -1,5 +1,9 @@
 <template>
   <div class="container">
+    <h1 v-if="getUserStocks.length === 0">
+      You have no owned stocks right now.<br />
+      Purchase some stocks and come back here!
+    </h1>
     <app-bought-stock
       v-for="stock in getUserStocks"
       :stock="stock"
