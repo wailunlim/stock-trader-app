@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import portfolio from "./modules/portfolio.js";
 
 Vue.use(Vuex);
 
@@ -15,11 +16,14 @@ export default new Vuex.Store({
       { name: "Google", price: 44 },
       { name: "Apple", price: 280 },
       { name: "Twitter", price: 60 }
-    ],
+    ]
   },
   getters: {
     getStocks({ stocks }) {
       return stocks;
+    },
+    getStockByName: state => {
+      return name => state.stocks.find(stock => stock.name === name);
     }
   },
   mutations: {
@@ -34,5 +38,7 @@ export default new Vuex.Store({
       commit("updateStockPrices");
     }
   },
-  modules: {}
+  modules: {
+    portfolio
+  }
 });

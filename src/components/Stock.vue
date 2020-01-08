@@ -9,16 +9,26 @@
         <div class="form-group mx-sm-3 mb-2">
           <input type="text" class="form-control" placeholder="Quantity" />
         </div>
-        <button class="btn btn-primary mb-2">Buy</button>
+        <button
+          class="btn btn-primary mb-2"
+          @click.prevent="buyStock({ info: stock, quantity: 1 })"
+        >
+          Buy
+        </button>
       </form>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "Stock",
-  props: ["stock"]
+  props: ["stock"],
+  methods: {
+    ...mapActions(["buyStock"])
+  }
 };
 </script>
 

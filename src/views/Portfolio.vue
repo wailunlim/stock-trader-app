@@ -1,16 +1,24 @@
 <template>
   <div class="container">
-    <app-stock />
+    <app-bought-stock
+      v-for="stock in getUserStocks"
+      :stock="stock"
+      :key="stock.name"
+    />
   </div>
 </template>
 
 <script>
-import Stock from "../components/Stock.vue";
+import { mapGetters } from "vuex";
+import BoughtStock from "../components/BoughtStock.vue";
 
 export default {
   name: "Portfolio",
   components: {
-    "app-stock": Stock
+    "app-bought-stock": BoughtStock
+  },
+  computed: {
+    ...mapGetters(["getUserStocks"])
   }
 };
 </script>
