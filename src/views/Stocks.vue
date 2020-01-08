@@ -1,6 +1,5 @@
 <template>
   <div class="container d-flex flex-wrap justify-content-around">
-    <app-stock v-for="i in 4" :key="i" />
     <app-stock v-for="stock in getStocks" :stock="stock" :key="stock.name" />
   </div>
 </template>
