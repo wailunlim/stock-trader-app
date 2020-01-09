@@ -30,11 +30,11 @@ export default {
 }
 
 .fade-enter-active {
-  transition: opacity 0.5s ease-in;
+  transition: opacity 0.2s ease-in;
 }
 
 .fade-leave-active {
   opacity: 0;
-  transition: opacity 0.5s ease-in;
+  transition: opacity 0.2s ease-in;
 }
 </style>

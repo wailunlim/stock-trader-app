@@ -35,6 +35,7 @@ export default new Vuex.Store({
   },
   actions: {
     endDay({ commit }) {
+      alert("It's a brand new day! Stock prices have changed!");
       commit("updateStockPrices");
     }
   },
