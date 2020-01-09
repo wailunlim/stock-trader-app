@@ -1,4 +1,8 @@
-# final-proj
+# stock-trader-app
+
+A simple sample app where a user can buy and sell (fake) stocks using (fake) $.
+
+Done as part of a Vue course I purchased off Udemy and am going through.
 
 ## Project setup
 ```
