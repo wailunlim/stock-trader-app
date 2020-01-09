@@ -22,11 +22,24 @@
         <li class="nav-item">
           <a class="nav-link" href="" @click.prevent="endDay">End Day</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Save & Load</a>
+        <li class="nav-item dropdown show">
+          <a
+            class="nav-link dropdown-toggle"
+            role="button"
+            href="#"
+            id="dropdownMenuLink"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >Save & Load</a
+          >
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="#">Save</a>
+            <a class="dropdown-item" href="#">Load</a>
+          </div>
         </li>
         <li class="nav-item">
-          <p class="nav-link disabled">Funds: {{ funds }}</p>
+          <a class="nav-link disabled">Funds: {{ funds }}</a>
         </li>
       </ul>
     </div>
