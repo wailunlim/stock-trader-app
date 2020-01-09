@@ -1,7 +1,9 @@
 <template>
   <div class="container" id="app">
     <app-navbar />
-    <router-view />
+    <transition name="fade" appear mode="out-in">
+      <router-view />
+    </transition>
   </div>
 </template>
 
@@ -22,5 +24,17 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  transition: opacity 0.5s ease-in;
+}
+
+.fade-leave-active {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
 }
 </style>
