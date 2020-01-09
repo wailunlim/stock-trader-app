@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container d-flex flex-wrap justify-content-around">
     <h1 v-if="getUserStocks.length === 0">
       You have no owned stocks right now.<br />
       Purchase some stocks and come back here!

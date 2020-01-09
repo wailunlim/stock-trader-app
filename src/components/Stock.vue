@@ -1,5 +1,5 @@
 <template>
-  <div class="card mb-3" style="width: 25rem;">
+  <div class="card mb-3" style="max-width: 25rem;">
     <div class="card-body">
       <h5 class="card-title mb-1">{{ stock.name }}</h5>
       <h6 class="card-subtitle text-muted">(Price: {{ stock.price }})</h6>
@@ -16,7 +16,7 @@
           />
         </div>
         <button
-          class="btn btn-primary mb-2"
+          class="btn btn-success mb-2"
           @click.prevent="buyStock({ info: stock, quantity })"
           :disabled="!quantity"
         >
@@ -45,8 +45,4 @@ export default {
 </script>
 
 <style scoped>
-.card {
-  display: inline-block;
-  margin: 2%;
-}
 </style>

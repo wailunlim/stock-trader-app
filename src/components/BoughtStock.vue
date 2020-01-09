@@ -1,5 +1,5 @@
 <template>
-  <div class="card mb-3" style="width: 25rem;">
+  <div class="card mb-3" style="max-width: 25rem;">
     <div class="card-body">
       <h5 class="card-title mb-1">{{ stock.info.name }}</h5>
       <h6 class="card-subtitle text-muted">
@@ -12,7 +12,6 @@
         <div class="form-group mx-sm-3 mb-2">
           <input
             type="number"
-            min="1"
             :max="stock.quantity"
             @input="validateInput"
             class="form-control"
@@ -54,4 +53,5 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>
