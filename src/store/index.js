@@ -38,6 +38,14 @@ export default new Vuex.Store({
     },
     replaceStockMarketState(state, payload) {
       state.stocks = payload;
+    },
+    resetStockMarket(state) {
+      state.stocks = [
+        { name: "BMW", price: 110 },
+        { name: "Google", price: 44 },
+        { name: "Apple", price: 280 },
+        { name: "Twitter", price: 60 }
+      ];
     }
   },
   actions: {
@@ -63,6 +71,12 @@ export default new Vuex.Store({
       dispatch("getMemento").then(state => {
         dispatch("acceptMemento", state);
       });
+    },
+    restart({ commit }) {
+      commit("resetStockMarket");
+      commit("resetUser");
+      commit("resetSafekeeper");
+      alert("Reset!");
     }
   },
   modules: {

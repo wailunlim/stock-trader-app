@@ -33,6 +33,10 @@ export default {
     replaceUserState(state, payload) {
       state.funds = payload.funds;
       state.userStocks = payload.userStocks;
+    },
+    resetUser(state) {
+      state.funds = 10000;
+      state.userSTocks = [];
     }
   },
   actions: {

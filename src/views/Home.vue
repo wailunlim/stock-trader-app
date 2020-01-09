@@ -12,10 +12,10 @@
       Click on 'End Day' to begin a new Day!
     </p>
     <hr />
-    <br />
     <p>
       <strong>Your Funds: ${{ funds }}</strong>
     </p>
+    <button class="btn btn-danger" @click="restartApp">Restart</button>
   </div>
 </template>
 
@@ -25,6 +25,11 @@ export default {
   computed: {
     funds() {
       return this.$store.getters.getUserFunds;
+    }
+  },
+  methods: {
+    restartApp() {
+      this.$store.dispatch("restart");
     }
   }
 };

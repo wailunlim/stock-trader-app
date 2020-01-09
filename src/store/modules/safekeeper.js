@@ -5,6 +5,9 @@ export default {
   mutations: {
     replaceMemento(state, payload) {
       state.memento = payload;
+    },
+    resetSafekeeper(state) {
+      state.memento = null;
     }
   },
   actions: {
