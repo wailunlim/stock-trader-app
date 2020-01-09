@@ -32,8 +32,6 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
-
 export default {
   name: "BoughtStock.vue",
   props: ["stock"],
@@ -48,10 +46,12 @@ export default {
       if (event.target.value > this.stock.quantity)
         return (this.quantity = this.stock.quantity);
     },
-    ...mapActions(["sellStock"])
+    sellStock(payload) {
+      this.$store.dispatch("sellStock", payload);
+      this.quantity = null;
+    }
   }
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
