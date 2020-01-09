@@ -1,3 +1,5 @@
+const _ = require("lodash");
+
 export default {
   state: {
     funds: 10000,
@@ -24,12 +26,13 @@ export default {
       const index = state.userStocks.findIndex(
         stock => stock.info.name === payload.name
       );
-      console.log(state.userStocks[0].info.name);
-      console.log(payload);
-      console.log(index);
       state.userStocks[index].quantity -= payload.quantity;
       // if the quantity is 0, remove from userStocks
       if (!state.userStocks[index].quantity) state.userStocks.splice(index, 1);
+    },
+    replaceUserState(state, payload) {
+      state.funds = payload.funds;
+      state.userStocks = payload.userStocks;
     }
   },
   actions: {
@@ -58,6 +61,7 @@ export default {
     },
     getUserFunds(state) {
       return state.funds;
-    }
+    },
+    getUserState: state => _.cloneDeep(state)
   }
 };

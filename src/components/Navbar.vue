@@ -34,8 +34,12 @@
             >Save & Load</a
           >
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Save</a>
-            <a class="dropdown-item" href="#">Load</a>
+            <a class="dropdown-item" href="" @click.prevent="createMemento"
+              >Save</a
+            >
+            <a class="dropdown-item" href="" @click.prevent="restoreState"
+              >Load</a
+            >
           </div>
         </li>
         <li class="nav-item">
@@ -57,7 +61,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["endDay"])
+    ...mapActions(["endDay", "restoreState", "createMemento"])
   }
 };
 </script>

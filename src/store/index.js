@@ -1,6 +1,9 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import user from "./modules/user.js";
+import safekeeper from "./modules/safekeeper.js";
+
+const _ = require("lodash");
 
 Vue.use(Vuex);
 
@@ -24,22 +27,46 @@ export default new Vuex.Store({
     },
     getStockByName: state => {
       return name => state.stocks.find(stock => stock.name === name);
-    }
+    },
+    getStockMarketState: state => _.cloneDeep(state.stocks)
   },
   mutations: {
     updateStockPrices(state) {
       state.stocks.forEach(
         stock => (stock.price += getRandomInt(1, 15) * randomSign())
       );
+    },
+    replaceStockMarketState(state, payload) {
+      state.stocks = payload;
     }
   },
   actions: {
     endDay({ commit }) {
       alert("It's a brand new day! Stock prices have changed!");
       commit("updateStockPrices");
+    },
+    acceptMemento({ commit }, payload) {
+      if (!payload) return; // if there wasn't a saved state to begin with
+      commit("replaceStockMarketState", payload.stockMarketState);
+      commit("replaceUserState", payload.userState);
+      alert("Loaded saved state!");
+    },
+    createMemento({ dispatch, getters }) {
+      const stockMarketState = getters.getStockMarketState;
+      const userState = getters.getUserState;
+      dispatch("safekeep", {
+        stockMarketState,
+        userState
+      });
+    },
+    async restoreState({ dispatch }) {
+      dispatch("getMemento").then(state => {
+        dispatch("acceptMemento", state);
+      });
     }
   },
   modules: {
-    user
+    user,
+    safekeeper
   }
 });
