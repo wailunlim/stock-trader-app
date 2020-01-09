@@ -40,7 +40,7 @@ export default {
   name: "Navbar.vue",
   computed: {
     funds() {
-      return this.$store.state.user.funds;
+      return this.$store.getters.getUserFunds;
     }
   },
   methods: {

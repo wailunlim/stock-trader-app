@@ -55,6 +55,9 @@ export default {
   getters: {
     getUserStocks(state) {
       return state.userStocks;
+    },
+    getUserFunds(state) {
+      return state.funds;
     }
   }
 };

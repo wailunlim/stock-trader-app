@@ -13,14 +13,20 @@
     </p>
     <hr />
     <br />
-    <p><strong>Your Funds: $10,000</strong></p>
+    <p>
+      <strong>Your Funds: ${{ funds }}</strong>
+    </p>
   </div>
 </template>
 
 <script>
 export default {
   name: "home",
-  components: {}
+  computed: {
+    funds() {
+      return this.$store.getters.getUserFunds;
+    }
+  }
 };
 </script>
 
